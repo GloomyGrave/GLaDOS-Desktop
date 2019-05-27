@@ -22,4 +22,4 @@ test: off
 deploy:
 - provider: GitHub
   auth_token:
-    secure: Mz/7xFDiHKNYIthOboBDJpy5YdLKpLtI85TV0ltDfuCWkndRVAaTwVBowSGI+ben
+    secure: s4Qh6C0lm0rZIKztCRjl69ER4IzK4voYH4O8XgMNu88/8pSW3Vb9h6kwq35UDq3V

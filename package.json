@@ -11,7 +11,7 @@
     "dist:l64": "electron-builder --linux --x64",
     "dist:l32": "electron-builder --linux --ia32",
     "dist:la64": "electron-builder --linux --arm64",
-    "dist:m": "electron-builder --mac --arm64"
+    "dist:m": "electron-builder --mac --x64"
   },
   "repository": "a",
   "keywords": [

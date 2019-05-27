@@ -18,3 +18,8 @@ build_script:
   - yarn dist:w64
 
 test: off
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: Mz/7xFDiHKNYIthOboBDJpy5YdLKpLtI85TV0ltDfuCWkndRVAaTwVBowSGI+ben

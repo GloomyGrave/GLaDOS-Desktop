@@ -3,7 +3,7 @@
 # GLaDOS-Desktop
 💿 GLaDOS on your desktop 
 
-GLaDOS (Genetic Lifeform and Disk Operating System)[1] is an artificially intelligent computer system from the video game series Portal. GLaDOS later appeared in The Lab and Lego Dimensions. The character was created by Erik Wolpaw and Kim Swift and voiced by Ellen McLain. GLaDOS is responsible for testing and maintenance in the Aperture Science research<br/> facility in all titles. 
+GLaDOS (Genetic Lifeform and Disk Operating System) is an artificially intelligent computer system from the video game series Portal. GLaDOS later appeared in The Lab and Lego Dimensions. The character was created by Erik Wolpaw and Kim Swift and voiced by Ellen McLain. GLaDOS is responsible for testing and maintenance in the Aperture Science research<br/> facility in all titles. 
 
 ![ss](https://user-images.githubusercontent.com/12003087/58419002-f938ce00-80bb-11e9-8d76-b46c1bf67da6.png)
 

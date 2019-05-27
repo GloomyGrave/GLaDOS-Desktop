@@ -1,0 +1,36 @@
+{
+  "name": "glados-desktop",
+  "version": "1.0.0",
+  "description": "GLaDOS on Desktop",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "repository": "a",
+  "keywords": [
+    "GLaDOS"
+  ],
+  "build": {
+    "appId": "com.gloomyghost",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "./src/images/logo.png",
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
+  "author": "GloomyGhost",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0"
+  }
+}

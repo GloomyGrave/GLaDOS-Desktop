@@ -18,6 +18,7 @@
     "GLaDOS"
   ],
   "build": {
+    "productName": "GLaDOS",
     "appId": "com.gloomyghost.gladosdesktop",
     "mac": {
       "category": "com.gloomyghost.gladosdesktop",
@@ -39,6 +40,14 @@
         "rpm",
         "pacman"
       ]
+    },
+    "nsis": {
+      "oneClick": false, 
+      "perMachine": true, 
+      "allowElevation": true, 
+      "allowToChangeInstallationDirectory": true, 
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
   },
   "author": "GloomyGhost",

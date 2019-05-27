@@ -1,3 +1,5 @@
+<img src='https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop/blob/master/src/images/logo.png?raw=true' align="right" width=200>
+
 # GLaDOS-Desktop
 💿 GLaDOS on your desktop 
 

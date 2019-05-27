@@ -13,7 +13,8 @@
     "dist:la64": "electron-builder --linux --arm64",
     "dist:m": "electron-builder --mac --x64"
   },
-  "repository": "a",
+  "repository": "https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop",
+  "homepage": "https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop",
   "keywords": [
     "GLaDOS"
   ],

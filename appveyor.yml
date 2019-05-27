@@ -9,6 +9,7 @@ cache:
 
 init:
   - git config --global core.autocrlf input
+  - [Environment]::SetEnvironmentVariable("GH_TOKEN","80f99bcedd6f35fbeb3867e3369db67f76267200","User")
 
 install:
   - ps: Install-Product node 8 x64

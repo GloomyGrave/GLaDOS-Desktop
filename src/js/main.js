@@ -1,152 +1,152 @@
-$(function () {
-	updateBlocks();
+$(function() {
+    updateBlocks();
 
-	//IN PREPARATION FOR A LIST OF THE RUNNING SYSTEMS
-	window.systems = [
-		["Courage", ""],
-		["is", ""],
-		["Not", ""],
-		["the", ""],
-		["Abscence", ""],
-		["of", ""],
-		["Fear", ""],
-		["A", ""],
-		["Trusted", ""],
-		["Friend", ""],
-		["in", ""],
-		["Science", ""],
-	];
+    //IN PREPARATION FOR A LIST OF THE RUNNING SYSTEMS
+    window.systems = [
+        ["Courage", ""],
+        ["is", ""],
+        ["Not", ""],
+        ["the", ""],
+        ["Abscence", ""],
+        ["of", ""],
+        ["Fear", ""],
+        ["A", ""],
+        ["Trusted", ""],
+        ["Friend", ""],
+        ["in", ""],
+        ["Science", ""],
+    ];
 
-	var systemsdevices = "";
-	var i = 0;
-	while (i < window.systems.length) {
-		//ONLY TILL I HAVE THE SYSTEM STATS
-		direction = "up";
-		flo = "right";
-		if (i < 6) {
-			direction = "down";
-			flo = "left";
-		}
-		systemsdevices += '<div id="' + window.systems[i][0] + '" class="column ' + direction + '" style="float:' + flo + ';">';
-		//END FILLER
+    let systemsdevices = "";
+    let i = 0;
+    while (i < window.systems.length) {
+        //ONLY TILL I HAVE THE SYSTEM STATS
+        direction = "up";
+        flo = "right";
+        if (i < 6) {
+            direction = "down";
+            flo = "left";
+        }
+        systemsdevices += '<div id="' + window.systems[i][0] + '" class="column ' + direction + '" style="float:' + flo + ';">';
+        //END FILLER
 
-		var bittybits = stringToBits(window.systems[i][0]);
-		//systemsdevices+='<div id="'+window.systems[i][0]+'" class="column" style="float:'+flo+';">';
-		var bits = "";
-		var j = 0;
-		while (j < bittybits.length) {
-			if (bittybits[j] == "1") {
-				bits += '<div class="one"></div>';
-			} else {
-				bits += '<div class="zero"></div>';
-			}
-			j++;
-		}
-		systemsdevices += bits + bits + bits + bits + '</div>';
-		i++;
-	}
-	$("#systems").html(systemsdevices);
+        let bittybits = stringToBits(window.systems[i][0]);
+        //systemsdevices+='<div id="'+window.systems[i][0]+'" class="column" style="float:'+flo+';">';
+        let bits = "";
+        let j = 0;
+        while (j < bittybits.length) {
+            if (bittybits[j] == "1") {
+                bits += '<div class="one"></div>';
+            } else {
+                bits += '<div class="zero"></div>';
+            }
+            j++;
+        }
+        systemsdevices += bits + bits + bits + bits + '</div>';
+        i++;
+    }
+    $("#systems").html(systemsdevices);
 
 
-	window.ctrlDown = false;
+    window.ctrlDown = false;
 
-	$(document).keydown(function (e) {
-		if (e.which == 17) ctrlDown = true;
-	}).keyup(function (e) {
-		if (e.which == 17) ctrlDown = false;
-	});
+    $(document).keydown(function(e) {
+        if (e.which == 17) ctrlDown = true;
+    }).keyup(function(e) {
+        if (e.which == 17) ctrlDown = false;
+    });
 });
 
-setInterval(function () {
-	updateBlocks();
+setInterval(function() {
+    updateBlocks();
 }, 60000);
 
 window.cursorstate = true;
-setInterval(function () {
-	if (window.cursorstate) {
-		$("#cursorblinking").text("\
+setInterval(function() {
+    if (window.cursorstate) {
+        $("#cursorblinking").text("\
 		.mark {\
 			text-decoration:none;\
 		}\
 		");
-		window.cursorstate = false;
-	} else {
-		$("#cursorblinking").text("\
+        window.cursorstate = false;
+    } else {
+        $("#cursorblinking").text("\
 		.mark {\
 			text-decoration:underline;\
 		}\
 		");
-		window.cursorstate = true;
-	}
+        window.cursorstate = true;
+    }
 }, 350);
 
 function updateSystems() {
-	var i = 0;
-	while (i < window.systems.length) {
-		request = $.getJSON(window.systems[i][1]);
-		request.done(function (data) {
-			time = new Date().getTime() / 1000;
-			difference = time - data[1];
-			if (difference < 60) {
-				$("#" + data[0]).removeClass("down");
-				$("#" + data[0]).addClass("up");
-			} else {
-				$("#" + data[0]).removeClass("up");
-				$("#" + data[0]).addClass("down");
-			}
-		});
-		request.fail(function () {
-			console.log("Failed to load systems status.");
-		});
-		i++;
-	}
+    let i = 0;
+    while (i < window.systems.length) {
+        request = $.getJSON(window.systems[i][1]);
+        request.done(function(data) {
+            time = new Date().getTime() / 1000;
+            difference = time - data[1];
+            if (difference < 60) {
+                $("#" + data[0]).removeClass("down");
+                $("#" + data[0]).addClass("up");
+            } else {
+                $("#" + data[0]).removeClass("up");
+                $("#" + data[0]).addClass("down");
+            }
+        });
+        request.fail(function() {
+            console.log("Failed to load systems status.");
+        });
+        i++;
+    }
 }
 
 function updateBlocks() {
-	$("#temperature").html(Math.round(Math.random() * 100));
-	$("#humidity").html(Math.round(Math.random() * 100));
-	$("#dewpoint").html(Math.round(Math.random() * 100));
+    $("#temperature").html(Math.round(Math.random() * 100) + "%");
+    $("#humidity").html(Math.round(Math.random() * 100) + "%");
+    $("#dewpoint").html(Math.round(Math.random() * 100) + "%");
 }
 
 function strip(html) {
-	var tmp = document.createElement("DIV");
-	tmp.innerHTML = html;
-	return tmp.textContent || tmp.innerText || "";
+    let tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
 }
 
 function stringToBits(input) {
-	output = "";
-	for (i = 0; i < input.length; i++) {
-		output += input[i].charCodeAt(0).toString(2);
-	}
-	return output;
+    output = "";
+    for (i = 0; i < input.length; i++) {
+        output += input[i].charCodeAt(0).toString(2);
+    }
+    return output;
 }
 
 function doGetCaretPosition(oField) {
 
-	// Initialize
-	var iCaretPos = 0;
+    // Initialize
+    let iCaretPos = 0;
 
-	// IE Support
-	if (document.selection) {
+    // IE Support
+    if (document.selection) {
 
-		// Set focus on the element
-		oField.focus();
+        // Set focus on the element
+        oField.focus();
 
-		// To get cursor position, get empty selection range
-		var oSel = document.selection.createRange();
+        // To get cursor position, get empty selection range
+        let oSel = document.selection.createRange();
 
-		// Move selection start to 0 position
-		oSel.moveStart('character', -oField.value.length);
+        // Move selection start to 0 position
+        oSel.moveStart('character', -oField.value.length);
 
-		// The caret position is selection length
-		iCaretPos = oSel.text.length;
-	}
+        // The caret position is selection length
+        iCaretPos = oSel.text.length;
+    }
 
-	// Firefox support
-	else if (oField.selectionStart || oField.selectionStart == '0')
-		iCaretPos = oField.selectionStart;
+    // Firefox support
+    else if (oField.selectionStart || oField.selectionStart == '0')
+        iCaretPos = oField.selectionStart;
 
-	// Return results
-	return (iCaretPos);
+    // Return results
+    return (iCaretPos);
 }

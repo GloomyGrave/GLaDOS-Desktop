@@ -1,62 +1,62 @@
 {
-  "name": "glados-desktop",
-  "version": "1.0.0",
-  "description": "GLaDOS on Desktop",
-  "main": "src/main.js",
-  "scripts": {
-    "start": "electron .",
-    "dist:w64": "electron-builder --win --x64 --publish never",
-    "dist:w32": "electron-builder --win --ia32 --publish never",
-    "dist:wa64": "electron-builder --win --arm64 --publish never",
-    "dist:l64": "electron-builder --linux --x64 --publish never",
-    "dist:l32": "electron-builder --linux --ia32 --publish never",
-    "dist:m": "electron-builder --mac --x64 --publish never"
-  },
-  "repository": "https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop",
-  "homepage": "https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop",
-  "keywords": [
-    "GLaDOS"
-  ],
-  "build": {
-    "productName": "GLaDOS",
-    "appId": "com.gloomyghost.gladosdesktop",
-    "mac": {
-      "category": "com.gloomyghost.gladosdesktop",
-      "icon": "./src/images/logo.png",
-      "target": [
-        "dmg"
-      ]
+    "name": "glados-desktop",
+    "version": "1.0.0",
+    "description": "GLaDOS on Desktop",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "electron .",
+        "dist:w64": "electron-builder --win --x64 --publish never",
+        "dist:w32": "electron-builder --win --ia32 --publish never",
+        "dist:wa64": "electron-builder --win --arm64 --publish never",
+        "dist:l64": "electron-builder --linux --x64 --publish never",
+        "dist:l32": "electron-builder --linux --ia32 --publish never",
+        "dist:m": "electron-builder --mac --x64 --publish never"
     },
-    "win": {
-      "icon": "./src/images/logo.png",
-      "target": [
-        "nsis"
-      ]
+    "repository": "https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop",
+    "homepage": "https://github.com/GloomyGhost-MosquitoSeal/GLaDOS-Desktop",
+    "keywords": [
+        "GLaDOS"
+    ],
+    "build": {
+        "productName": "GLaDOS",
+        "appId": "com.gloomyghost.gladosdesktop",
+        "mac": {
+            "category": "com.gloomyghost.gladosdesktop",
+            "icon": "./src/images/logo.png",
+            "target": [
+                "dmg"
+            ]
+        },
+        "win": {
+            "icon": "./src/images/logo.png",
+            "target": [
+                "nsis"
+            ]
+        },
+        "linux": {
+            "icon": "./src/images/logo.png",
+            "target": [
+                "deb",
+                "rpm",
+                "pacman"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": true,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true
+        }
     },
-    "linux": {
-      "icon": "./src/images/logo.png",
-      "target": [
-        "deb",
-        "rpm",
-        "pacman"
-      ]
+    "author": {
+        "name": "GloomyGhost",
+        "email": "GloomyGhost@foxmail.com"
     },
-    "nsis": {
-      "oneClick": false, 
-      "perMachine": true, 
-      "allowElevation": true, 
-      "allowToChangeInstallationDirectory": true, 
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^5.0.2",
+        "electron-builder": "^20.41.0"
     }
-  },
-  "author": {
-    "name": "GloomyGhost",
-    "email": "GloomyGhost@foxmail.com"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^5.0.2",
-    "electron-builder": "^20.41.0"
-  }
 }

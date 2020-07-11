@@ -22,7 +22,7 @@ test: off
 version: build.0.0.{build}
 
 artifacts:
-- path: dist\*exe
+- path: dist\*.exe
   name: GLaDOS-{build}
 
 
